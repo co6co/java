@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: demo-provider
+  profiles:
+    active: local
+  cloud:
+    nacos:
+      config:
+        server-addr:  127.0.0.1:8848
+        #local
+        namespace: 1df1f011-ed54-42d8-ada3-b2f2c8f946b3
+        group:  demo
+        #指定配置的后缀，支持 properties、yaml、yml，默认为 properties
+        file-extension: yml
