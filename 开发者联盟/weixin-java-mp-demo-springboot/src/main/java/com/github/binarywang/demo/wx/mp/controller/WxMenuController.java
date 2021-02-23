@@ -57,11 +57,26 @@ public class WxMenuController {
 //        button2.setPagePath("pages/lunar/index.html");
 //        button2.setUrl("http://mp.weixin.qq.com");
 
+
+        WxMenuButton button2=   new WxMenuButton();
+        button2.setName("测试测试");
+        WxMenuButton button21 = new WxMenuButton();
+        button21.setName("获取位置");
+        button21.setType(MenuButtonType.LOCATION_SELECT);
+        button21.setKey("location");
+        button2.getSubButtons().add(button21);
+
+        WxMenuButton button22 = new WxMenuButton();
+        button22.setName("获取位置E");
+        button22.setType("event");
+        button22.setKey("LOCATION");
+        button2.getSubButtons().add(button22);
+
         WxMenuButton button3 = new WxMenuButton();
         button3.setName("菜单");
 
         menu.getButtons().add(button1);
-//        menu.getButtons().add(button2);
+        menu.getButtons().add(button2);
         menu.getButtons().add(button3);
 
         WxMenuButton button31 = new WxMenuButton();

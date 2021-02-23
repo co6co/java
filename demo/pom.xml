@@ -11,12 +11,26 @@
     <modules>
         <module>module/consumer</module>
         <module>module/provider</module>
+        <module>module/test</module>
+        <module>module/gateway</module>
     </modules>
     <properties>
         <spring-boot.version>2.0.4.RELEASE</spring-boot.version>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
+
 
     <dependencyManagement>
         <dependencies>
@@ -52,5 +66,21 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

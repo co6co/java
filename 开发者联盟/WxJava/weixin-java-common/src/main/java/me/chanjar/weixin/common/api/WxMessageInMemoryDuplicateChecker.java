@@ -14,6 +14,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
  */
 public class WxMessageInMemoryDuplicateChecker implements WxMessageDuplicateChecker {
 
+
   /**
    * 一个消息ID在内存的过期时间：15秒.
    */

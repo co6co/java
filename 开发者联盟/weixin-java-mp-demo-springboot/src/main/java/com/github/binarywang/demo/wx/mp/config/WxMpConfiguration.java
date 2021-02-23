@@ -10,8 +10,12 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static me.chanjar.weixin.common.api.WxConsts.EventType;
 import static me.chanjar.weixin.common.api.WxConsts.EventType.SUBSCRIBE;
@@ -28,7 +32,7 @@ import static me.chanjar.weixin.mp.constant.WxMpEventConstants.POI_CHECK_NOTIFY;
  */
 @AllArgsConstructor
 @Configuration
-@EnableConfigurationProperties(WxMpProperties.class)
+@EnableConfigurationProperties({WxMpProperties.class})
 public class WxMpConfiguration {
     private final LogHandler logHandler;
     private final NullHandler nullHandler;
@@ -51,6 +55,8 @@ public class WxMpConfiguration {
         }
 
         WxMpService service = new WxMpServiceImpl();
+
+
         service.setMultiConfigStorages(configs
             .stream().map(a -> {
                 WxMpDefaultConfigImpl configStorage = new WxMpDefaultConfigImpl();
@@ -62,6 +68,7 @@ public class WxMpConfiguration {
             }).collect(Collectors.toMap(WxMpDefaultConfigImpl::getAppId, a -> a, (o, n) -> o)));
         return service;
     }
+
 
     @Bean
     public WxMpMessageRouter messageRouter(WxMpService wxMpService) {
@@ -107,5 +114,6 @@ public class WxMpConfiguration {
 
         return newRouter;
     }
+
 
 }
