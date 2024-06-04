@@ -5,6 +5,8 @@ import com.alibaba.nacos.api.PropertyKeyConst;
 import com.alibaba.nacos.api.config.ConfigService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+
 import java.util.Properties;
 
 /**
@@ -14,6 +16,7 @@ import java.util.Properties;
  * @Description:
  **/
 @SpringBootApplication
+@EnableDiscoveryClient
 public class ProviderApplication {
     public static void main(String[] args) {
        /*try{

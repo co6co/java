@@ -6,12 +6,12 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr:  127.0.0.1:8848
+        server-addr:  nacos.cloud.co6co.top:9091
         #local
         namespace: 1df1f011-ed54-42d8-ada3-b2f2c8f946b3
         group:  demo
         #指定配置的后缀，支持 properties、yaml、yml，默认为 properties
         file-extension: yml
       discovery:
-        server-addr: 127.0.0.1:8848
+        server-addr: nacos.cloud.co6co.top:9091
 

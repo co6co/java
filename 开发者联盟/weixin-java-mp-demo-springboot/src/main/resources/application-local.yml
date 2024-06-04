@@ -1,0 +1,7 @@
+wx:
+    mp:
+        configs:
+            - appId: wx4d6f5f979ef935ae
+              secret: fbb03f11106414c49ffbda2c97b343f2
+              token: www
+              aesKey: 111

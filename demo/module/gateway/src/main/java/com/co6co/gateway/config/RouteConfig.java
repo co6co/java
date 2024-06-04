@@ -17,19 +17,14 @@ import org.springframework.web.reactive.DispatcherHandler;
  **/
 @Configuration
 public class RouteConfig {
-    @Bean
+   /* @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route(r -> r.path("/163")
                         .filters(f -> f.stripPrefix(1))
                         .uri("https://www.163.com"))
                 .build();
-    }
-    DispatcherHandler dispatcherHandler (){
-        return new DispatcherHandler();
-    }
-
-
+    }  */
     @Bean
     public MapReactiveUserDetailsService reactiveUserDetailsService() {
         UserDetails user = User.withDefaultPasswordEncoder().username("user").password("password").roles("USER").build();

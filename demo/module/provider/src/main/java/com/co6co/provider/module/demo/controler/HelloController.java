@@ -17,7 +17,7 @@ import java.security.NoSuchAlgorithmException;
  **/
 @RestController
 @RequestMapping("api")
-@EnableDiscoveryClient
+
 public class HelloController {
     @RequestMapping("hello/{name}")
     public String  hello(@PathVariable String name){
